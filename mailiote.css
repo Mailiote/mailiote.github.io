@@ -1,13 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@700&family=Source+Sans+3:wght@600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Kanit:wght@700&family=Source+Sans+3:wght@600&display=swap');
 @import url('https//fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Kanit:wght@700&family=Patua+One&family=Source+Sans+3:wght@600&display=swap');
-
-*
-{
+*{ 
     margin:0;
     padding:0;    
 }
+
 :root{
     --color1:rgb(0, 0, 0, 0.75);
     --color2:rgb(0, 0, 0, 0.75);
@@ -21,12 +17,9 @@ html{
     display: flex;
     position: fixed;    
     height: 90px;
-    background: rgba(14, 14, 15, 0.8);
-   
+    background: rgba(14, 14, 15, 0.8);   
     justify-content: space-around; 
-    z-index: 110;
-    
-    
+    z-index: 110;    
 }
 
 #logo  /*MAILIOTE 3d/*/
@@ -38,19 +31,19 @@ html{
     align-items: center; /*vai centralizar o texto*/     
     width: 400px;
     height: 50px;
-   color: hwb(22 0% 0%);  
-   font-size: 2rem; 
-   position: relative;    
-   transition: ease-out 0.5s;   
-   display: flex;   
-   z-index: 1;
-   font-family: 'Source Sans 3', sans-serif
+    color: hwb(22 0% 0%);  
+    font-size: 2rem; 
+    position: relative;    
+    transition: ease-out 0.5s;   
+    display: flex;   
+    z-index: 1;
+    font-family: 'Source Sans 3', sans-serif
 
 }
 #logo p/*Engenharia e arquitetura*/ { 
-   margin-top: -5px;
+    margin-top: -5px;
     font-size: 1.4rem;
-      font-family: 'Source Sans 3', sans-serif
+    font-family: 'Source Sans 3', sans-serif
 }
 #logo:hover  /*MAILIOTE 3d/*/
 {    
@@ -78,8 +71,7 @@ html{
     left: 20%;/* ela vai acabar quase no fim do texto se for 100% ela acaba um pouco depois do texto por causa do padding */
     right:20%;/* o underline vai acabar antes do fim do texto , se for 100% fica até o fim*/
     transition: .5s all none;
-    box-shadow: 0px 0 22px  2px rgb(251, 208, 98);
-    
+    box-shadow: 0px 0 22px  2px rgb(251, 208, 98);    
     z-index: 5;
 }
 
@@ -120,8 +112,7 @@ html{
     left: 20%;/* ela vai acabar quase no fim do texto se for 100% ela acaba um pouco depois do texto por causa do padding */
     right:20%;/* o underline vai acabar antes do fim do texto , se for 100% fica até o fim*/
     transition: .5s all none;
-    box-shadow: 0px 0 22px  2px rgb(255, 231, 171);
-    
+    box-shadow: 0px 0 22px  2px rgb(255, 231, 171);    
     z-index: 1;
 }
 
@@ -145,12 +136,7 @@ html{
 }
 @media(max-width:1024px)/* quando minimizar e chegar a 950 pix o Menu encolhe*/
 {     
-    body 
-    {
-      overflow-x: hidden;
-    }
-
-      #logo{
+    #logo{
         font-size: 1.8rem;
       }
       #logo p {
@@ -158,27 +144,38 @@ html{
       }
     #menu /*Esse é o Menu que abre quando a tela fica pequena*/
     {
-     position: absolute;   
+     
+     flex-direction: column;/*pras  texto(li) letras ficarem em  modo coluna uma em cima da outra*/ 
+     justify-content: space-around;/*pro texto(li) preencherem todo espaço no menu*/
+     /*align-items:center; /* alinhar os LI texto no centro do menu*/
+     position: absolute;    
+     background: rgb(0, 0, 0, 0.80);   
      top: 90px;/* espaço que vai iniciao do 0*/    
      right:0; /*vai iniciar ficar todo ao lado direito*/
-     width: 40vw; /* largua desejada do menu, vai ficar meia tela , pois é em vw*/
+     width: 0vw; /* largua desejada do menu, vai ficar meia tela , pois é em vw*/
+     z-index: 1000;
+     visibility: hidden;
+     overflow-x: hidden;
      height: calc(100vh - 80px);
-     background: rgb(0, 0, 0, 0.80); 
-     flex-direction: column;/*pras  texto(li) letras ficarem em  modo coluna uma em cima da outra*/ 
-     align-items:center; /* alinhar os LI texto no centro do menu*/
-     /*justify-content: space-around;/*pro texto(li) preencherem todo espaço no menu*/
-     transform: translateX(100%); /* faz o fundo do menu lateral deslizar pro lado */
-     transition: transform 0.3s ease-in; /*faz o menu se recolher lentamente*/
-     border-left: solid 1px;       
-          
+     transition: .4s ; /*faz o menu se recolher lentamente*/
+    /* transition: transform 0.6s ease-in; /*faz o menu se recolher lentamente*/
+     /*transform: translateX(100%); /* faz o fundo do menu lateral deslizar pro lado */
+     /*border-left: solid 1px;*/
+
     }
+    #nav.active #menu{
+        width: 40vw;
+        visibility: visible;
+    }
+
     #menu li/*quando menu é aberto entra suave*/
     {
+       margin-bottom: 60px;
        font-size: 1rem; 
        margin-left: 0;
        opacity: 0;         
     }   
-        #menu.active
+       /* #menu.active
         {
         transform: translateX(0);
         }
@@ -192,11 +189,11 @@ html{
             opacity: 1;
             transform: translateX(0);
           } 
-        }     
+        }*/     
          #btn-mobile
         {               
         
-            display:flex;
+        display:flex;
         padding:0.rem;
         font-size: 1rem;
         margin: 2.2rem; 
@@ -210,7 +207,7 @@ html{
         {   color: hwb(22 0% 0%);
             border-top: 2px solid;
             width: 20px;
-            box-shadow: 0 0 10px rebeccapurple;  
+            /*box-shadow: 0 0 15px rgb(255, 255, 255);*/  
         }
         #hamburguer::after, #hamburguer::before
         {
@@ -218,7 +215,7 @@ html{
             display: block; /*tem que indicar que é um elementode  block pra criar o width e hight pra dar as dimensoes */
             width: 20px;/* largura do elemento que vai ser uma linha*/
             height: 2px; /*expessura do elementoi ou linha como vai ser*/
-            background: currentColor;/*quando mudar a cor no #hamburguer de cima muda automatico o after e beforer*/
+           background: currentColor;/*quando mudar a cor no #hamburguer de cima muda automatico o after e beforer*/
             margin-top: 5px;
             position: relative; /* tem que ter essa conf. para funcionar e alinha ao centro as LINHAs do X do menu , na seguencia*/ 
             transition: .3s;   
@@ -228,47 +225,55 @@ html{
         {
             transform: rotate(270deg);
             transition: .5s;
-            border-color: transparent;                       
+            border-color: transparent;
+            
+                             
         }
 
         #nav.active #hamburguer::before
         {
             transform: rotate(135deg);
+            box-shadow: 0 0 15px rgb(255, 0, 0);
+            text-shadow: 0 0 10px #ff5e00 ;
+            *box-shadow: 0 0 15px rgb(255, 255, 255);  
         }
 
         #nav.active #hamburguer::after
-        {
-            
+        {            
             transform: rotate(-135deg);
             top: -7px; /* serve pra alinhar para cima um pouco no meio pra se tornar um X no menu,  e preisa addicionar position:relative no #hamburguer after/before acima ,no foi testado varios numeros antes*/
         }
+        @keyframes navLinkFade
+{
+ from 
+ {
+     opacity: 0;
+ }
+ to 
+ {
+     opacity: 1;
+ }   
+}
+
 }
 section{
     min-height: 100vh; 
-    width: 100vw;  
+    min-width: 100vw;  
 }
 
-#Mailiote3d{
-    
- 
+#Mailiote3d{ 
     background-color: #ff5e00;
     position: relative;    
     z-index: -1;
 }
 
-.main-child{/*imagem de fundo pagina inicial*/ 
-   
+.main-child{/*imagem de fundo pagina inicial*/    
     height: 100vh;
     width: 100vw;     
     z-index: -1;
     background: linear-gradient(180deg, #000000b6, #000000aa, #00000077,rgba(1, 1, 1, 0.214),rgba(0, 0, 0, 0.566), #000000b1,rgba(0, 0, 0, 0.975)) no-repeat;
-
 }
-#fundo{  
-    
-   
 
-}
 #nda img{
     position: absolute;  
     margin-top: 0;
@@ -276,19 +281,17 @@ section{
     height: 100%;
     z-index: -50;
     object-fit: cover;
-    object-position:bottom center;
-    
-    
+    object-position:bottom center;    
 }
 
 #welcome {/* BEM VINDO!*/    
     
     position:absolute;            
-    margin-top: 100px;
+    margin-top: 150px;
     width: 100vw;
     text-align: center;
-    font-size: 40px;
-    letter-spacing: 0.8rem;
+    font-size: max(38px, 4vw);/*utiliza o maior valor entre os dois*/
+    letter-spacing: 1rem;
     color: rgb(255, 255, 255); 
     font-family: 'Source Sans 3', sans-serif;
    /*background: #42fbf254;    */
@@ -296,27 +299,27 @@ section{
    
 }
 #texto{ /* descricao sonho...*/
-    width: 99%;
+   
+    
     position:absolute; 
     text-align: center; 
-    letter-spacing: 0.4rem;  
-    top: 80%;
-    margin: 10px;   
-    font-size: 2.5em;
+    width: 100vw;
+    letter-spacing: .5rem;  
+    top: 75%;
+   
+    font-size: min(38px, 8vw);/*utiliza o maior valor entre os dois*/
     color: rgb(255, 255, 255); 
     font-family: 'Source Sans 3', sans-serif;     
     text-shadow: #000000 0 0  15px ;  
 }
 
-#Servicos{  /*fundo e alocacao dos textos titulo*/
-    
+#Servicos{  /*fundo e alocacao dos textos titulo*/    
     min-height: 100vh;
     background: linear-gradient(180deg, #000000bb, #00000091, #00000047,rgba(115, 115, 115, 0.496),rgba(0, 0, 0, 0.434), #00000086,rgba(0, 0, 0, 0.885)) no-repeat;
     font-family: 'Source Sans 3', sans-serif;
     color: rgb(33, 28, 28);/*cor do texto*/
     padding-top: 3%;    
-    text-align: center;
-      
+    text-align: center;      
 }
     .container{
         position: relative;
@@ -324,18 +327,14 @@ section{
         flex-wrap:wrap ;
         padding: 2%;
     }   
-.container #image{
-    
-    width: 100%;
-    
+.container #image{    
+    width: 100%;    
     display: flex;
     flex-wrap:wrap ;
     justify-content: space-around;
     list-style: none;
-  
-    
-}#Servicos img {
-    
+
+}#Servicos img {    
     border-radius: 50%;
     box-shadow: #000000 0 0 25px;
     width: 200px;
@@ -343,7 +342,6 @@ section{
     border: #ff5e00 solid 5px;
     object-fit: cover;
     object-position:bottom center;
-
 }    
 
 #Servicos h1{
@@ -354,6 +352,7 @@ section{
     text-shadow: #000000 0 0 12px;
     letter-spacing: 8px;
     }
+
 #Servicos  p{
     font-size: 25px;
     letter-spacing: 4px;
@@ -361,29 +360,6 @@ section{
     padding: 5%;
 }
 
-
-
-#Contato h1{
-    text-align: center;
-    font-size: 250%;
-    margin-top: 5%;
-    margin-left: 15%;
-    margin-right: 15%;
-    letter-spacing: 10px;
-    
-   
-}
-
-#Contato{
-    
-    padding-top: 15%;
-     font-size: 20px;
-    font-family: 'Source Sans 3', sans-serif;
-    color: rgb(199, 193, 193);
-
-    letter-spacing: 5px;
-   background-color: rgb(29,29,29);
-}
 
 
 #Projetos .container{  /*pagina */
@@ -398,11 +374,11 @@ section{
     letter-spacing: 10px;
     text-align: center;
     font-size: 30px;
-    font-family: 'Source Sans 3', sans-serif;
-   
+    font-family: 'Source Sans 3', sans-serif;   
     z-index: 2000;
     
 }
+
 #Projetos .container .image-container {/* MINIATURAS EM CONJUNTO trata de alocação de todas as miniaturas na tela*/
     display: flex;
     flex-wrap:wrap ; /* faz os itens flexiveis ficar em multiplas linhas, */
@@ -410,6 +386,7 @@ section{
     justify-content: center; /* vai alinhas todas as miniaturas no centro da tela*/
     padding: 20px;/*o padding faz deslocar em ambos lados*/
 }
+
 #Projetos .container .image-container .image{ /*MINIATURAS UNICAS trata tamanho do border no caso a moldura em si e nao a imagem */
     height: 250px; /* altura da miniatua*/
     width: 350px; /* largura da miniatura*/
@@ -418,6 +395,7 @@ section{
     cursor: pointer; /* fica a maozinha*/
     box-shadow: rgb(255, 111, 0) 0 0 8px;
 }
+
 #Projetos .container .image-container .image img{ /*IMAGEM dentro da moldura border*/
     height: 100%;/*define a imagem dentro do da moldura  */
     width: 100%;/*define a larguran*/
@@ -426,8 +404,7 @@ section{
 
 }
 #Projetos .container .image-container .image img:hover{
-    transform: scale(1.4); 
-    
+    transform: scale(1.4);     
 }
 #Projetos .container .popup-image{/*IMAGEM FULL quando a imagem abre tamanho grande*/
     position: fixed;
@@ -439,6 +416,7 @@ section{
     z-index: 50;
     display: none;
 }
+
 #Projetos .container .popup-image span{/*esse é X pra fechar a imagem*/
     position: absolute;
     top: 9%;
@@ -448,8 +426,8 @@ section{
     color: #fff;
     cursor: pointer;
     z-index: 5010;
-
 }
+
 #Projetos .container .popup-image img{ /* dimensoes e a posiçao quando abre a imagem */  
     position: absolute;
     top: 52%;
@@ -460,48 +438,70 @@ section{
     box-shadow: rgb(255, 111, 0) 0 0 15px;
     width: 70%; /*tamanho da imagem pode ser em px ou rem*/
     object-fit: cover; /*pra ficar dentro do espço e nao fica destorcida ou esticada*/
-z-index: 200;
+    z-index: 200;
 }
-#contato h1{
-    margin-top: 5%;
+
+#Contato{
+   position: relative;
+   background-color: rgb(9, 9, 9);
 }
- #Contato p{
+
+#Contato h1{
     text-align: center;
-    font-size: 25px;
-    margin-top: 5%;
-    margin-left: 15%;
-    margin-right: 15%;
-    letter-spacing: 4px;
-   
+    padding-top: 300px;
+    font-size: max(30px,2vw);
+    font-family: 'Source Sans 3', sans-serif;
+    color: rgb(229, 226, 226);
+    text-shadow: #000000 0 0 12px;
+    letter-spacing: 8px;
+    
+    }
+    
+    #Contato p{
+        text-align: center;
+        padding-top:90px;
+        font-size: max(20px, 0.1vw);
+        font-family: 'Source Sans 3', sans-serif;
+        color: rgb(221, 210, 210);
+
+    }
+    footer {
+    margin-top: 20px;
+    font-size: max(30px, 1vw);
+    text-align: center;
+    font-family: 'Source Sans 3', sans-serif;
+    color: #ff5e00;
+    text-decoration: none;
+    list-style: none;
+    
 }
-#Contato .icon-sociais .image{
-   
-    width:60px;
-    height: 60px; 
-   padding: 10px;
+
+.midia-social{
+    margin-top: 320px;
+}
+#Contato .icon-sociais .image{   
+    width:50px;
+    height:50px; 
+    padding: 10px;
     border-radius: 50%;
     display: flex;
     justify-content: center ;
    
 }
 
-#Contato img {
-  
-    border-radius: 50%;
-    box-shadow: #ffffff 0 0 25px;
+#Contato img {  
+    border-radius: 50%;   
     width: 100%;
     height:100%;   
     border: #ff5e00 solid 2px;
-    object-fit: cover;  
-   
-}    
+    object-fit: cover;     
+}   
+
 #Contato .icon-sociais{/*epaco total do 3incones*/
-    display: flex;  /*faz as os icons ficarem lado a lado*/ 
-   
+    display: flex;  /*faz as os icons ficarem lado a lado*/    
     flex-wrap:wrap ; /* faz os itens flexiveis ficar em multiplas linhas, */
     gap: 2%; /*espaço entre as miniaturas*/
     justify-content: center; /* vai alinhas todas as miniaturas no centro da tela*/
-    margin-top: 80px;
 }
 
 #Contato img:hover {
@@ -511,22 +511,43 @@ z-index: 200;
     border: #ffffff solid 3px;
  }
 
-
-
 @media(max-width:600px)
 {
     #Projetos .container .popup-image img{
-
     width: 95%;
     }
+
     #Servicos h1{
         font-size: 1.rem;
         padding-bottom: 6%;
         margin-top: 3%;
     }
-    #Projetos h1{
 
-        padding-top: 10%;
-       
+    #Projetos h1{
+        padding-top: 10%;       
     }
+    #Contato h1{
+        text-align: center;
+        padding-top: 220px;
+        font-size: max(30px,2vw);
+        font-family: 'Source Sans 3', sans-serif;
+        color: rgb(229, 226, 226);
+        text-shadow: #000000 0 0 12px;
+        letter-spacing: 8px;
+        
+        }
+        .midia-social{
+            margin-top: 150px;
+            transform: scale(0.8);  
+        }
+
+        footer{
+            padding: 1px;
+            margin-top: 5px;
+            font-size: 10px;
+            text-align: center;
+            font-family: 'Source Sans 3', sans-serif;
+            color: #ff5e00;
+            text-decoration: none;
+        }
 }
