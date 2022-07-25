@@ -465,8 +465,8 @@ section{
         color: rgb(221, 210, 210);
 
     }
-    footer {
-    margin-top: 20px;
+    footer p{
+    margin-top: 70px;
     font-size: max(30px, 1vw);
     text-align: center;
     font-family: 'Source Sans 3', sans-serif;
@@ -477,7 +477,7 @@ section{
 }
 
 .midia-social{
-    margin-top: 320px;
+    margin-top: 250px;
 }
 #Contato .icon-sociais .image{   
     width:50px;
@@ -541,9 +541,9 @@ section{
             transform: scale(0.8);  
         }
 
-        footer{
-            padding: 1px;
-            margin-top: 5px;
+        footer p{
+          
+            margin-top: 1px;
             font-size: 10px;
             text-align: center;
             font-family: 'Source Sans 3', sans-serif;
