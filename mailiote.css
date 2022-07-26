@@ -315,7 +315,7 @@ section{
 
 #Servicos{  /*fundo e alocacao dos textos titulo*/    
     min-height: 100vh;
-    background: linear-gradient(180deg, #000000bb, #00000091, #00000047,rgba(115, 115, 115, 0.496),rgba(0, 0, 0, 0.434), #00000086,rgba(0, 0, 0, 0.885)) no-repeat;
+    background: linear-gradient(180deg, #000000bb, #00000091, #00000047,rgba(115, 115, 115, 0.496),rgba(0, 0, 0, 0.321), #0000002b,rgba(0, 0, 0, 0.885)) no-repeat;
     font-family: 'Source Sans 3', sans-serif;
     color: rgb(33, 28, 28);/*cor do texto*/
     padding-top: 3%;    
@@ -551,11 +551,13 @@ section{
     #Servicos h1{
         font-size: 1.rem;
         padding-bottom: 6%;
-        margin-top: 3%;
+        margin-top: 1%;
     }
     #Servicos p{
         margin-top: 0px;
         padding-top: 5px;
+        margin-left: 4px;
+        margin-right: 5px;
         padding-bottom: 20px;
         font-size: 18px;
         letter-spacing: 1px;
@@ -569,6 +571,7 @@ section{
 
     #Servicos #image {
      gap: 15px;
+     padding-top: 1px;
     }
 
     #Projetos h1{
@@ -585,13 +588,13 @@ section{
         
         }
         #Contatoline{
-            margin-top: 1PX;
+            
             width: 90%;
         }
 
         .midia-social{
             margin-top: 130px;
-            transform: scale(0.4);  
+            transform: scale(0.9);  
         }
         footer .textorodape p {
             margin-top: 15px;
