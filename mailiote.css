@@ -321,32 +321,29 @@ section{
     padding-top: 3%;    
     text-align: center;      
 }
-    .container{
-        position: relative;
-        display: flex;
-        flex-wrap:wrap ;
-        padding: 2%;
-    }   
+   
 .container #image{    
-    width: 100%;    
+    width: 100%; 
     display: flex;
     flex-wrap:wrap ;
     justify-content: space-around;
     list-style: none;
-
-}#Servicos img {    
+    padding-top: 5%;
+}
+#Servicos img {    
     border-radius: 50%;
     box-shadow: #000000 0 0 25px;
     width: 200px;
     height: 200px;   
-    border: #ff5e00 solid 5px;
+    border: #ff5e00 solid 2px;
     object-fit: cover;
     object-position:bottom center;
 }    
 
+
 #Servicos h1{
     padding-top: 90px;
-    font-size: 2.9rem;
+    font-size: max(30px,3vw);
     font-family: 'Source Sans 3', sans-serif;
     color: rgb(229, 226, 226);
     text-shadow: #000000 0 0 12px;
@@ -354,10 +351,10 @@ section{
     }
 
 #Servicos  p{
-    font-size: 25px;
-    letter-spacing: 4px;
+    font-size: 40px; 
+    letter-spacing: 5px;
     list-style: none;
-    padding: 5%;
+    margin-top: 100px;
 }
 
 
@@ -441,60 +438,85 @@ section{
     z-index: 200;
 }
 
-#Contato{
+#Contato{  
+   background-color: rgb(9, 9, 9);  
    position: relative;
-   background-color: rgb(9, 9, 9);
+   text-align: center;
 }
 
 #Contato h1{
     text-align: center;
-    padding-top: 300px;
-    font-size: max(30px,2vw);
+    padding-top: 400px;
+    font-size: max(30px,3vw);
     font-family: 'Source Sans 3', sans-serif;
     color: rgb(229, 226, 226);
     text-shadow: #000000 0 0 12px;
-    letter-spacing: 8px;
+    letter-spacing: 10px;
+    text-shadow: #ff5e00 0 0 15px;
     
     }
-    
-    #Contato p{
+    #Contato h2{
+      
+        color: rgb(229, 226, 226);
         text-align: center;
-        padding-top:90px;
-        font-size: max(20px, 0.1vw);
         font-family: 'Source Sans 3', sans-serif;
-        color: rgb(221, 210, 210);
-
+        font-size: min(40px, 5vw);
+        letter-spacing: 5px;
+        text-shadow: #ff5e00 0 0 25px;
+        padding: 1%;
     }
-    footer p{
-    margin-top: 70px;
-    font-size: max(30px, 1vw);
-    text-align: center;
-    font-family: 'Source Sans 3', sans-serif;
-    color: #ff5e00;
-    text-decoration: none;
-    list-style: none;
+
     
+    #Contato .endereco p {
+        text-align: center;
+        margin-top: 100px;   
+        font-size: min(30px, 4vw);
+        font-family: 'Source Sans 3', sans-serif;
+        color: #fff;
+    }
+    #Contatoline1{
+     display: inline-block;    
+     background: #ff5e00;
+     width: 90%;
+     height: 5px;
+
+     }
+    #Contatoline{
+       
+        width: 40%;
+        height: 5px;        
+        border-radius: 80%;
+        box-shadow: 0px 0 22px  2px rgb(245, 90, 7);    
+        background: #ff5e00 ;        
+        display: inline-block;    
+      
+    }
+
+ 
+    footer .textorodape p {
+    margin-top: 40px;
+    font-size: max(20px, 1vw);
+    font-family:'Source Sans 3', sans-serif;
+    color: rgba(255, 94, 0, 0.994);
+    text-align: center;  
 }
 
 .midia-social{
-    margin-top: 250px;
+   margin-top: 300px;       
 }
+
 #Contato .icon-sociais .image{   
     width:50px;
     height:50px; 
     padding: 10px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center ;
-   
+    border-radius: 50%;  
 }
 
 #Contato img {  
     border-radius: 50%;   
     width: 100%;
     height:100%;   
-    border: #ff5e00 solid 2px;
-    object-fit: cover;     
+    border: #ff5e00 solid 2px;    
 }   
 
 #Contato .icon-sociais{/*epaco total do 3incones*/
@@ -513,6 +535,15 @@ section{
 
 @media(max-width:600px)
 {
+    #Projetos .container .image-container .image{ /*MINIATURAS UNICAS trata tamanho do border no caso a moldura em si e nao a imagem */
+        height: 100px; /* altura da miniatua*/
+        width: 92px; /* largura da miniatura*/
+        border: 2px solid rgba(255, 255, 255, 0.365); 
+        overflow: hidden;/* LImita a imagem dentro do border na hora do hover, sem ela a imagem expandi pra fora da caixa border*/
+        cursor: pointer; /* fica a maozinha*/
+        box-shadow: rgb(255, 111, 0) 0 0 8px;
+    }
+
     #Projetos .container .popup-image img{
     width: 95%;
     }
@@ -522,32 +553,47 @@ section{
         padding-bottom: 6%;
         margin-top: 3%;
     }
+    #Servicos p{
+        margin-top: 0px;
+        padding-top: 5px;
+        padding-bottom: 20px;
+        font-size: 18px;
+        letter-spacing: 1px;
+       
+    }
+
+    #Servicos img {
+                width: 100px;
+        height: 100px;
+    }
+
+    #Servicos #image {
+     gap: 15px;
+    }
 
     #Projetos h1{
         padding-top: 10%;       
     }
+
     #Contato h1{
         text-align: center;
-        padding-top: 220px;
+        padding-top: 250px;
         font-size: max(30px,2vw);
         font-family: 'Source Sans 3', sans-serif;
         color: rgb(229, 226, 226);
-        text-shadow: #000000 0 0 12px;
         letter-spacing: 8px;
         
         }
-        .midia-social{
-            margin-top: 150px;
-            transform: scale(0.8);  
+        #Contatoline{
+            margin-top: 1PX;
+            width: 90%;
         }
 
-        footer p{
-          
-            margin-top: 1px;
-            font-size: 10px;
-            text-align: center;
-            font-family: 'Source Sans 3', sans-serif;
-            color: #ff5e00;
-            text-decoration: none;
+        .midia-social{
+            margin-top: 130px;
+            transform: scale(0.4);  
+        }
+        footer .textorodape p {
+            margin-top: 15px;
         }
 }
